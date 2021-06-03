@@ -1,7 +1,11 @@
 <?php
-$nombre = "Olga";
-$email = "olga@gmail.com";
-$pass = "123";
+// $nombre = "Olga";
+// $email = "olga@gmail.com";
+// $pass = "123";
+
+$nombre = $_POST['nombre'];
+$email = $_POST['email'];
+$pass = $_POST['pass'];
 
 include("connection.php");
 
