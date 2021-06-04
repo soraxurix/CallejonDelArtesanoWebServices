@@ -1,12 +1,13 @@
 <?php
-$email = $_POST['email'];
-$pass = $_POST['pass'];
+$email = $_GET['email'];
+$pass = $_GET['pass'];
 // $email = "uri";
 // $pass = "123";
 
 include("connection.php");
 
 $consulta = "SELECT * from usuarios where email = '$email' and pass = '$pass'";
+// $consulta = "SELECT * from usuarios where email = '$email'";
 $result = mysqli_query($con, $consulta);
 
 $data = array();
