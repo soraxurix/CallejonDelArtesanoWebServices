@@ -18,7 +18,6 @@ if (isset($_POST['nombre']) && isset($_POST['email']) && isset($_POST['pass'])) 
   if(!($array['contar'] == 1)){
     $consulta = "INSERT INTO usuarios(Nombre, Email, pass) values('$nombre','$email','$pass')";
     $result = mysqli_query($con, $consulta);
-    echo "Se insertó al usuario";
   }else {
     echo json_encode(null);
   }
