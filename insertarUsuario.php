@@ -16,8 +16,7 @@ $array = mysqli_fetch_array($result);
 
 if(!($array['contar'] > 0)){
   $consulta = "INSERT INTO usuarios(Nombre, Email, pass) values('$nombre','$email','$pass')";
-  $result = mysqli_query($con, $consulta);+
-  echo json_encode("Correcto");
+  $result = mysqli_query($con, $consulta);
 }else {
   echo json_encode(null);
 }
