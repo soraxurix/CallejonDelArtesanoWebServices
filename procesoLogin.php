@@ -16,6 +16,14 @@ $data = $result->fetch_assoc();
 // while($row = mysqli_fetch_assoc($result)){
 //   $data[] = $row;
 // }
+if($data == null){
+  echo json_encode($data);
+}else{
+  $consulta = "SELECT * from usuarios where email = '$email' and pass = '$pass'";
+  $result = mysqli_query($con, $consulta);
+  $array = mysqli_fetch_array($result);
 
-echo json_encode($data);
+  echo json_encode($array['idCliente']);
+}
+// echo json_encode($data);
  ?>
