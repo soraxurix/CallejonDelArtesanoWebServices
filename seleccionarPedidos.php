@@ -6,7 +6,7 @@ $id = $_GET['id'];
 
 include("connection.php");
 
-$consulta = "SELECT pr.Nombre as 'NombreProducto', idPedido, u.Nombre as 'NombreUsuario' from pedidos pe inner join productos pr on pr.idProducto = pe.idProducto  inner join usuarios u on u.idCliente = pe.idCliente where u.idCliente='$id'";
+$consulta = "SELECT pr.Nombre as 'Nombre Producto', idPedido, u.Nombre as 'Nombre usuario', pe.metodoPago as 'Metodo Pago' from pedidos pe inner join productos pr on pr.idProducto = pe.idProducto  inner join usuarios u on u.idCliente = pe.idCliente where u.idCliente='$id'";
 // $consulta = "SELECT * from usuarios where email = '$email'";
 $result = mysqli_query($con, $consulta);
 
