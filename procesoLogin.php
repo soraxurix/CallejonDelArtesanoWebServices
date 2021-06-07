@@ -1,7 +1,7 @@
 <?php
 $email = $_POST['email'];
 $pass = $_POST['pass'];
-// $email = "uri";
+// $email = "uri@gmail.com";
 // $pass = "123";
 
 include("connection.php");
@@ -12,10 +12,7 @@ $consulta = "SELECT * from usuarios where email = '$email' and pass = '$pass'";
 $result = mysqli_query($con, $consulta);
 
 $data = $result->fetch_assoc();
-// $data = array();
-// while($row = mysqli_fetch_assoc($result)){
-//   $data[] = $row;
-// }
+
 if($data == null){
   echo json_encode($data);
 }else{
@@ -23,7 +20,9 @@ if($data == null){
   $result = mysqli_query($con, $consulta);
   $array = mysqli_fetch_array($result);
 
-  echo json_encode($array['idCliente']);
+  $variable = intval($array['idCliente']);
+
+  echo json_encode ($variable);
 }
-// echo json_encode($data);
+
  ?>
