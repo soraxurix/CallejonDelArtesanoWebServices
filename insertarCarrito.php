@@ -7,9 +7,6 @@ $idProducto = $_POST['Producto'];
 
 include("connection.php");
 
-
-$consulta = "INSERT INTO carrito (idCliente, idProducto) values ($idCliente,$idProducto)";
-$result = mysqli_query($con, $consulta);
-
-
- ?>
+$consulta = "INSERT INTO carrito (idcliente, idProducto) values ($idCliente,$idProducto)";
+$result = mysqli_query($con, $Consulta);
+?>
